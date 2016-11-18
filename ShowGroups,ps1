@@ -1,3 +1,5 @@
+#Shows all groups an AD object (User or Group) is a member of
+$UserOrGroup=Read-Host "Enter username or group to lookup"
 Get-ADPrincipalGroupMembership "$UserOrGroup" | 
     get-adgroup -property description, groupcategory | 
     select-object name, groupcategory, description |
